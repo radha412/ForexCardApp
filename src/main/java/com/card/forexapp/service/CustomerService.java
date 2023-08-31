@@ -14,7 +14,7 @@ import com.card.forexapp.repository.CustomerRepository;
 public class CustomerService {
 	
 	@Autowired
-	CustomerRepository customerRepository;
+	private CustomerRepository customerRepository;
 
 	public List<Customer> getAllCustomers() {
 		// TODO Auto-generated method stub
