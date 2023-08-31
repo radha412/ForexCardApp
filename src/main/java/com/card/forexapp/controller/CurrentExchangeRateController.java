@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.card.forexapp.entity.CurrentExchangeRate;
 import com.card.forexapp.exception.CurrentExchangeRateException;
 import com.card.forexapp.service.CurrentExchangeRateService;
 
-
 @RestController
 public class CurrentExchangeRateController {
-	
 	@Autowired
 	CurrentExchangeRateService currentExchangeRateService;
 	
@@ -42,8 +39,5 @@ public class CurrentExchangeRateController {
 	@GetMapping("/currencyrate")
 	public List<CurrentExchangeRate> getAllExchangeRate() throws CurrentExchangeRateException{
 		return this.currentExchangeRateService.getAllCurrentExchangeRate();
-	}
-	
-	
-
+  }
 }
