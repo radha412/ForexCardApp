@@ -21,10 +21,4 @@ public class CurrentExchangeRateController {
 	public List<CurrentExchangeRate> getAllCurrentExchangeRate() {
 		return this.currentExchangeRateService.getAllCurrentExchangeRate();
 	}
-	
-	
-	
-	
-	
-
 }

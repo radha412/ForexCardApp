@@ -17,6 +17,7 @@ public class Customer {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<LoadingTranscation> loadingTranscations=new ArrayList<>();
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<PaymentTransaction> paymentTranscations =  new ArrayList<>();
 	

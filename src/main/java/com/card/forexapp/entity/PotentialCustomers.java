@@ -1,20 +1,19 @@
 package com.card.forexapp.entity;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
-public class PotencialCustomers {
+public class PotentialCustomers {
 	
 	@Id
-	private Long potencialCustomerId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long potentialCustomerId;
 	private String name;
 	private String email;
 	private String phoneNumber;
@@ -28,15 +27,15 @@ public class PotencialCustomers {
 	@OneToOne(cascade = CascadeType.ALL)
 	private BankDetails bankDetails;
 	private boolean status;
-	public PotencialCustomers() {
+	
+	public PotentialCustomers() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public PotencialCustomers(Long potencialCustomerId, String name, String email, String phoneNumber, String password,
+	public PotentialCustomers(Long potentialCustomerId, String name, String email, String phoneNumber, String password,
 			LocalDateTime dateOfBirth, Long adhaarNumber, Long panCardNumber, String occupation, Long annualIncome,
 			String paymentMode, com.card.forexapp.entity.BankDetails bankDetails, boolean status) {
 		super();
-		this.potencialCustomerId = potencialCustomerId;
+		this.potentialCustomerId = potentialCustomerId;
 		this.name = name;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
@@ -50,11 +49,11 @@ public class PotencialCustomers {
 		this.bankDetails = bankDetails;
 		this.status = status;
 	}
-	public Long getPotencialCustomerId() {
-		return potencialCustomerId;
+	public Long getPotentialCustomerId() {
+		return potentialCustomerId;
 	}
-	public void setPotencialCustomerId(Long potencialCustomerId) {
-		this.potencialCustomerId = potencialCustomerId;
+	public void setPotencialCustomerId(Long potentialCustomerId) {
+		this.potentialCustomerId = potentialCustomerId;
 	}
 	public String getName() {
 		return name;
@@ -128,9 +127,4 @@ public class PotencialCustomers {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	
-
-
-
 }
