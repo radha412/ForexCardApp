@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.card.forexapp.dto.CustomerDTO;
 import com.card.forexapp.entity.Customer;
+import com.card.forexapp.exception.PotentialCustomerException;
 import com.card.forexapp.service.CustomerService;
 
 
@@ -27,7 +28,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping("customers/submit-customer-details")
-	public ResponseEntity<String> submitCustomerDetails(@RequestBody CustomerDTO customerDto){
+	public ResponseEntity<String> submitCustomerDetails(@RequestBody CustomerDTO customerDto) throws PotentialCustomerException{
 		this.customerService.submitCustomerDetails(customerDto);
 		return ResponseEntity.ok("form submitted successfully");
 	}

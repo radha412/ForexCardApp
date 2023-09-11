@@ -33,6 +33,8 @@ public class ForexCard {
 	private boolean isActivate;
 	
 	private Double manualSpendingLimit;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Customer customer;
 
 	public ForexCard() {
 		super();
@@ -41,7 +43,7 @@ public class ForexCard {
 
 	public ForexCard(Integer id, ForexCardDetails forexCardDetails, Long forexCardNumber, String cardHolderName,
 			LocalDate expiryDate, Integer cvv, Integer pin, Double limitBalance, Double currentBalance,
-			boolean isActivate, Double manualSpendingLimit) {
+			boolean isActivate, Double manualSpendingLimit, Customer customer) {
 		super();
 		this.id = id;
 		this.forexCardDetails = forexCardDetails;
@@ -54,6 +56,7 @@ public class ForexCard {
 		this.currentBalance = currentBalance;
 		this.isActivate = isActivate;
 		this.manualSpendingLimit = manualSpendingLimit;
+		this.customer = customer;
 	}
 
 	public Integer getId() {
@@ -144,8 +147,8 @@ public class ForexCard {
 		this.manualSpendingLimit = manualSpendingLimit;
 	}
 	
-	
-	
-	
+	public Customer getCustomer() {
+		return this.customer;
+	}
 }
 

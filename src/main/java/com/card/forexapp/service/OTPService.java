@@ -41,7 +41,6 @@ public class OTPService {
 	}
 
 	public Boolean validateOTP(String key, Integer otpNumber) {
-		// get OTP from cache
 		Integer cacheOTP = this.getOtp(key);
 		if (cacheOTP != null && cacheOTP.equals(otpNumber)) {
 			this.clearOTP(key);

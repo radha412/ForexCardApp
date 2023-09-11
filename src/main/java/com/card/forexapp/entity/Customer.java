@@ -15,6 +15,11 @@ public class Customer {
 	@Id
 	private Long customerId;
 	
+	private String phoneNumber;
+	
+	private String email;
+	
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<LoadingTranscation> loadingTranscations=new ArrayList<>();
 	
@@ -26,7 +31,17 @@ public class Customer {
 
 	public Customer() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+	
+	public Customer(Long customerId, String phoneNumber, String email, List<LoadingTranscation> loadingTranscations,
+			List<PaymentTransaction> paymentTranscations, ForexCard forexCard) {
+		super();
+		this.customerId = customerId;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.loadingTranscations = loadingTranscations;
+		this.paymentTranscations = paymentTranscations;
+		this.forexCard = forexCard;
 	}
 
 	public Customer(Long customerId, List<LoadingTranscation> loadingTranscations,
@@ -70,6 +85,20 @@ public class Customer {
 		this.forexCard = forexCard;
 	}
 	
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
 	
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 }
