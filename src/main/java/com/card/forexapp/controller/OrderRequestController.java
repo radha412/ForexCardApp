@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.card.forexapp.entity.OrderRequest;
 import com.card.forexapp.entity.OrderResponse;
+import com.card.forexapp.repository.MyOrderRepository;
 import com.card.forexapp.service.OrderRequestService;
 import com.razorpay.RazorpayException;
 
@@ -21,6 +22,9 @@ public class OrderRequestController {
 
     @Autowired
     private OrderRequestService orderRequestService;
+    
+    @Autowired 
+    MyOrderRepository myOrderRepo;
 
 
     @PostMapping("/createorder")

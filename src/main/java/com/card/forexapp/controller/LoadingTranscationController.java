@@ -24,6 +24,8 @@ public class LoadingTranscationController {
 	 
 	@Autowired
 	ForexCardService forexCardService;	
+	
+	
 		
 	@PostMapping("card/money/{forexcardnumber}/{basecountry}/{basecurrency}/{quotecountry}/{quotecurrency}/{loadingAmount}")
 	public ResponseEntity<Double> addMoneyToForexCard(@PathVariable("forexcardnumber") Long forexcardNumber, 

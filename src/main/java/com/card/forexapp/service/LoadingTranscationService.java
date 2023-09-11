@@ -19,6 +19,8 @@ public class LoadingTranscationService {
 	@Autowired
 	ForexCardService forexCardService;
 	
+	
+	
 
 	public Double addMoneyToForexCard(Long forexcardNumber, Double loadingAmount, String baseCountry,
 			String baseCurrency, String quoteCountry, String quoteCurrency) throws CurrentExchangeRateException {
