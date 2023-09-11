@@ -4,14 +4,16 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
 @Entity
 public class LoadingTranscation {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long paymentId;
-	
 	@OneToOne(cascade = CascadeType.ALL)
 	private CurrentExchangeRate currentExchangeRate;
 	@OneToOne(cascade = CascadeType.ALL)

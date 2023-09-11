@@ -22,6 +22,21 @@ public class ForexCardService {
 		
 	}
 	
+
+	public ForexCard getForexCardByNumber(Long forexCardNumber) {
+		return this.forexCardRepo.findByForexCardNumber(forexCardNumber);
+	}
+
+
+	public void createForexCard(ForexCard forexCard) {
+		this.forexCardRepo.save(forexCard);
+		
+	}
+
+	
+
+	
+	
 	
 
 }

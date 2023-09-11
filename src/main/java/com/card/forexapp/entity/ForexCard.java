@@ -2,8 +2,8 @@ package com.card.forexapp.entity;
 
 
 import java.time.LocalDate;
-
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -16,6 +16,7 @@ public class ForexCard {
 	@OneToOne(cascade = CascadeType.ALL)
 	private ForexCardDetails forexCardDetails;
 	
+	@Column(unique = true)
 	private Long forexCardNumber;
 	
 	private String cardHolderName;
@@ -51,7 +52,7 @@ public class ForexCard {
 		this.cvv = cvv;
 		this.pin = pin;
 		this.limitBalance = limitBalance;
-		this.currentBalance = currentBalance;
+		this.currentBalance = 0.0;
 		this.isActivate = isActivate;
 		this.manualSpendingLimit = manualSpendingLimit;
 	}
@@ -142,6 +143,14 @@ public class ForexCard {
 
 	public void setManualSpendingLimit(Double manualSpendingLimit) {
 		this.manualSpendingLimit = manualSpendingLimit;
+	}
+
+	@Override
+	public String toString() {
+		return "ForexCard [id=" + id + ", forexCardDetails=" + forexCardDetails + ", forexCardNumber=" + forexCardNumber
+				+ ", cardHolderName=" + cardHolderName + ", expiryDate=" + expiryDate + ", cvv=" + cvv + ", pin=" + pin
+				+ ", limitBalance=" + limitBalance + ", currentBalance=" + currentBalance + ", isActivate=" + isActivate
+				+ ", manualSpendingLimit=" + manualSpendingLimit + "]";
 	}
 	
 	

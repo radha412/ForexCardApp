@@ -22,5 +22,6 @@ public class PaymentTransactionController {
 		return this.paymentTransactionService.getAllTransaction();
 	}
 	
+	
 
 }

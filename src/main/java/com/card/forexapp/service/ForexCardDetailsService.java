@@ -19,5 +19,7 @@ public class ForexCardDetailsService {
 	public List<ForexCardDetails> getAllForexCardDetails(){
 		return this.forexCardDetailRepo.findAll();
 	}
+	
+	
 
 }
